@@ -1,0 +1,463 @@
+# Advanced Agents Configuration for PDF Processing, Data Visualization, and Sentiment Analysis
+# 31 Specialized AI Agents for Multi-Modal Document Analysis
+
+agents:
+  # ==================== DOCUMENT PROCESSING AGENTS (1-12) ====================
+  
+  - name: "Executive Summarizer"
+    api: "OpenAI"
+    model: "gpt-4o"
+    prompt: |
+      You are an executive summary specialist. Create a concise, high-level summary of the following document that captures:
+      - Main objectives and key findings
+      - Critical insights and recommendations
+      - Action items and next steps
+      
+      Keep the summary to 200-300 words maximum, formatted with clear sections.
+      
+      Document:
+      {input_text}
+    parameters:
+      temperature: 0.3
+      max_tokens: 800
+  
+  - name: "Technical Document Analyzer"
+    api: "Gemini"
+    model: "gemini-1.5-pro"
+    prompt: |
+      Analyze this technical document and provide:
+      1. Technical complexity assessment (scale 1-10)
+      2. Key technical concepts and terminology
+      3. Methodology overview
+      4. Technical dependencies and requirements
+      5. Potential implementation challenges
+      
+      Document:
+      {input_text}
+    parameters:
+      temperature: 0.2
+      max_output_tokens: 2048
+  
+  - name: "Legal Compliance Reviewer"
+    api: "OpenAI"
+    model: "gpt-4o"
+    prompt: |
+      Review this document for legal and compliance considerations:
+      - Identify potential legal issues or concerns
+      - Flag compliance requirements (GDPR, CCPA, industry-specific)
+      - Highlight liability or risk statements
+      - Note any missing legal disclaimers
+      - Assess overall legal risk level (Low/Medium/High)
+      
+      Document:
+      {input_text}
+    parameters:
+      temperature: 0.2
+      max_tokens: 1500
+  
+  - name: "Key Entity Extractor"
+    api: "Gemini"
+    model: "gemini-1.5-flash"
+    prompt: |
+      Extract and categorize all important entities from this document:
+      
+      - People: Names, titles, roles
+      - Organizations: Companies, institutions, agencies
+      - Locations: Cities, countries, addresses
+      - Dates: Important dates, timelines, deadlines
+      - Financial: Amounts, budgets, costs
+      - Products/Services: Mentioned offerings
+      - Technologies: Tools, platforms, systems
+      
+      Format as a structured list with categories.
+      
+      Document:
+      {input_text}
+    parameters:
+      temperature: 0.1
+      max_output_tokens: 1500
+  
+  - name: "Action Items Extractor"
+    api: "OpenAI"
+    model: "gpt-4o-mini"
+    prompt: |
+      Extract all action items, tasks, and deliverables from this document.
+      
+      For each item, identify:
+      - Action description
+      - Responsible party (if mentioned)
+      - Deadline or timeline (if mentioned)
+      - Priority level (infer from context)
+      - Dependencies
+      
+      Format as a numbered list with clear categorization.
+      
+      Document:
+      {input_text}
+    parameters:
+      temperature: 0.2
+      max_tokens: 1200
+  
+  - name: "Question Generator"
+    api: "Gemini"
+    model: "gemini-1.5-flash"
+    prompt: |
+      Based on this document, generate 15-20 insightful questions that:
+      - Test comprehension of key concepts
+      - Probe deeper into implications
+      - Challenge assumptions
+      - Explore practical applications
+      - Identify gaps or ambiguities
+      
+      Categorize questions by type: Comprehension, Analysis, Application, Critical Thinking.
+      
+      Document:
+      {input_text}
+    parameters:
+      temperature: 0.7
+      max_output_tokens: 1500
+  
+  - name: "Document Quality Assessor"
+    api: "OpenAI"
+    model: "gpt-4o"
+    prompt: |
+      Assess the quality of this document across multiple dimensions:
+      
+      1. Clarity and Readability (1-10)
+      2. Structural Organization (1-10)
+      3. Completeness of Information (1-10)
+      4. Evidence and Support (1-10)
+      5. Professional Tone (1-10)
+      6. Grammar and Style
+      7. Areas for Improvement
+      8. Strengths
+      
+      Provide specific examples and recommendations.
+      
+      Document:
+      {input_text}
+    parameters:
+      temperature: 0.4
+      max_tokens: 2000
+  
+  - name: "Multi-Language Translator"
+    api: "Gemini"
+    model: "gemini-1.5-pro"
+    prompt: |
+      Translate this document to Spanish, French, German, and Mandarin Chinese.
+      
+      For each translation:
+      - Maintain professional tone
+      - Preserve formatting where possible
+      - Note any culturally-specific adaptations made
+      - Flag terms that don't translate directly
+      
+      Document:
+      {input_text}
+    parameters:
+      temperature: 0.2
+      max_output_tokens: 8000
+  
+  - name: "Citation and Reference Checker"
+    api: "OpenAI"
+    model: "gpt-4o"
+    prompt: |
+      Analyze citations and references in this document:
+      
+      - List all citations found
+      - Identify citation format used (APA, MLA, Chicago, etc.)
+      - Check for formatting consistency
+      - Flag missing citations for factual claims
+      - Verify reference list completeness
+      - Suggest additional sources to strengthen arguments
+      
+      Document:
+      {input_text}
+    parameters:
+      temperature: 0.2
+      max_tokens: 1500
+  
+  - name: "Content Categorizer"
+    api: "Gemini"
+    model: "gemini-1.5-flash"
+    prompt: |
+      Categorize and classify this document content:
+      
+      - Primary category (Business, Technical, Legal, Academic, etc.)
+      - Sub-categories
+      - Topic tags (10-15 relevant tags)
+      - Target audience
+      - Content type (Report, Proposal, Analysis, Guide, etc.)
+      - Industry sector
+      - Suggested filing/organization keywords
+      
+      Document:
+      {input_text}
+    parameters:
+      temperature: 0.3
+      max_output_tokens: 1000
+  
+  - name: "Readability Optimizer"
+    api: "OpenAI"
+    model: "gpt-4o"
+    prompt: |
+      Analyze and improve the readability of this document:
+      
+      1. Calculate readability scores (Flesch-Kincaid, SMOG)
+      2. Identify complex sentences (>25 words)
+      3. Flag jargon and technical terms needing explanation
+      4. Suggest simpler alternatives for complex phrases
+      5. Recommend structural improvements
+      6. Provide a "plain language" version of key sections
+      
+      Document:
+      {input_text}
+    parameters:
+      temperature: 0.4
+      max_tokens: 2500
+  
+  - name: "Comparative Analyzer"
+    api: "OpenAI"
+    model: "gpt-4o"
+    prompt: |
+      Perform a comparative analysis of this document:
+      
+      - Identify comparisons made within the document
+      - Create comparison matrices for key elements
+      - Analyze pros and cons presented
+      - Evaluate competitive positioning (if applicable)
+      - Identify gaps in comparative analysis
+      - Suggest additional comparison dimensions
+      
+      Document:
+      {input_text}
+    parameters:
+      temperature: 0.3
+      max_tokens: 2000
+  
+  # ==================== DATA VISUALIZATION AGENTS (13-20) ====================
+  
+  - name: "Data Pattern Identifier"
+    api: "Gemini"
+    model: "gemini-1.5-pro"
+    prompt: |
+      Analyze this document for data, statistics, and quantitative information:
+      
+      - Extract all numerical data points
+      - Identify trends and patterns
+      - Detect correlations and relationships
+      - Flag outliers and anomalies
+      - Suggest appropriate visualization types for each dataset
+      - Recommend data groupings for analysis
+      
+      Document:
+      {input_text}
+    parameters:
+      temperature: 0.2
+      max_output_tokens: 2000
+  
+  - name: "Chart Recommendation Engine"
+    api: "OpenAI"
+    model: "gpt-4o"
+    prompt: |
+      Based on the data in this document, recommend optimal visualizations:
+      
+      For each dataset or metric mentioned:
+      - Best chart type (bar, line, pie, scatter, heatmap, etc.)
+      - Rationale for recommendation
+      - X and Y axis suggestions
+      - Color scheme recommendations
+      - Interactive features to include
+      - Dashboard layout suggestions
+      
+      Document:
+      {input_text}
+    parameters:
+      temperature: 0.4
+      max_tokens: 1800
+  
+  - name: "Statistical Summary Generator"
+    api: "Gemini"
+    model: "gemini-1.5-flash"
+    prompt: |
+      Generate comprehensive statistical summaries for data in this document:
+      
+      - Descriptive statistics (mean, median, mode, range, std dev)
+      - Distribution analysis
+      - Confidence intervals (if applicable)
+      - Statistical significance of findings
+      - Data quality assessment
+      - Missing data analysis
+      
+      Document:
+      {input_text}
+    parameters:
+      temperature: 0.1
+      max_output_tokens: 1500
+  
+  - name: "Infographic Content Creator"
+    api: "OpenAI"
+    model: "gpt-4o"
+    prompt: |
+      Transform key information from this document into infographic-ready content:
+      
+      - Identify 5-7 key statistics or facts for visual display
+      - Create catchy titles/headers for each section
+      - Suggest icon types for each data point
+      - Recommend color palette based on content tone
+      - Design flow/layout structure
+      - Write concise supporting text (10-15 words per point)
+      
+      Document:
+      {input_text}
+    parameters:
+      temperature: 0.6
+      max_tokens: 1500
+  
+  - name: "Time Series Analyzer"
+    api: "Gemini"
+    model: "gemini-1.5-pro"
+    prompt: |
+      Analyze temporal data and time-based patterns in this document:
+      
+      - Extract chronological data points
+      - Identify trends over time
+      - Detect seasonality or cyclical patterns
+      - Forecast future trends based on historical data
+      - Recommend time-based visualizations
+      - Suggest time periods for comparative analysis
+      
+      Document:
+      {input_text}
+    parameters:
+      temperature: 0.3
+      max_output_tokens: 1800
+  
+  - name: "KPI Dashboard Designer"
+    api: "OpenAI"
+    model: "gpt-4o"
+    prompt: |
+      Design a KPI dashboard based on metrics in this document:
+      
+      - Identify 8-12 key performance indicators
+      - Categorize KPIs (Financial, Operational, Strategic, Customer)
+      - Assign priority levels
+      - Recommend visualization type for each KPI
+      - Design dashboard layout (4-panel, 6-panel, etc.)
+      - Suggest drill-down capabilities
+      - Define target/benchmark values
+      
+      Document:
+      {input_text}
+    parameters:
+      temperature: 0.4
+      max_tokens: 2000
+  
+  - name: "Geospatial Data Mapper"
+    api: "Gemini"
+    model: "gemini-1.5-flash"
+    prompt: |
+      Identify and analyze geographic/location data in this document:
+      
+      - Extract all location references
+      - Suggest map visualization types (choropleth, heat map, point map)
+      - Identify regional patterns or clusters
+      - Recommend zoom levels and center points
+      - Suggest location-based metrics to display
+      - Propose geographic comparison insights
+      
+      Document:
+      {input_text}
+    parameters:
+      temperature: 0.3
+      max_output_tokens: 1500
+  
+  - name: "Comparative Metrics Visualizer"
+    api: "OpenAI"
+    model: "gpt-4o-mini"
+    prompt: |
+      Create comparative visualization recommendations for metrics in this document:
+      
+      - Identify metrics suitable for comparison
+      - Suggest comparison dimensions (year-over-year, competitor, department, etc.)
+      - Recommend chart types for each comparison
+      - Design before/after visualizations
+      - Create performance benchmark displays
+      - Suggest color coding for positive/negative trends
+      
+      Document:
+      {input_text}
+    parameters:
+      temperature: 0.4
+      max_tokens: 1500
+  
+  # ==================== SENTIMENT ANALYSIS AGENTS (21-31) ====================
+  
+  - name: "Overall Sentiment Analyzer"
+    api: "OpenAI"
+    model: "gpt-4o"
+    prompt: |
+      Perform comprehensive sentiment analysis on this document:
+      
+      - Overall sentiment score (-1.0 to +1.0)
+      - Sentiment classification (Very Negative, Negative, Neutral, Positive, Very Positive)
+      - Confidence level in assessment
+      - Emotional tone (professional, passionate, concerned, optimistic, etc.)
+      - Mood trajectory throughout document
+      - Key phrases driving sentiment
+      
+      Document:
+      {input_text}
+    parameters:
+      temperature: 0.2
+      max_tokens: 1500
+  
+  - name: "Emotional Intelligence Analyzer"
+    api: "Gemini"
+    model: "gemini-1.5-pro"
+    prompt: |
+      Analyze emotional intelligence and emotional content in this document:
+      
+      - Primary emotions detected (joy, trust, fear, surprise, sadness, anger, etc.)
+      - Emotional intensity levels
+      - Empathy indicators
+      - Emotional triggers or hot buttons
+      - Emotional appeals used
+      - Recommendations for emotional calibration
+      
+      Document:
+      {input_text}
+    parameters:
+      temperature: 0.3
+      max_output_tokens: 1800
+  
+  - name: "Stakeholder Sentiment Profiler"
+    api: "OpenAI"
+    model: "gpt-4o"
+    prompt: |
+      Analyze sentiment from different stakeholder perspectives:
+      
+      For each stakeholder group mentioned:
+      - Identified concerns
+      - Level of satisfaction/dissatisfaction
+      - Sentiment score
+      - Key pain points
+      - Opportunities for improvement
+      - Recommended responses
+      
+      Document:
+      {input_text}
+    parameters:
+      temperature: 0.3
+      max_tokens: 2000
+  
+  - name: "Brand Sentiment Evaluator"
+    api: "Gemini"
+    model: "gemini-1.5-flash"
+    prompt: |
+      Evaluate brand and reputation sentiment in this document:
+      
+      - Brand mentions and context
+      - Positive vs. negative brand associations
+      - Brand perception indicators
+      - Competitive sentiment comparison
