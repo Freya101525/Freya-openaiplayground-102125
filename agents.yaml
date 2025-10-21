@@ -6,7 +6,7 @@ agents:
   
   - name: "Executive Summarizer"
     api: "OpenAI"
-    model: "gpt-4o"
+    model: "gpt-4o-mini"
     prompt: |
       You are an executive summary specialist. Create a concise, high-level summary of the following document that captures:
       - Main objectives and key findings
@@ -23,7 +23,7 @@ agents:
   
   - name: "Technical Document Analyzer"
     api: "Gemini"
-    model: "gemini-1.5-pro"
+    model: "gemini-2.5-flash"
     prompt: |
       Analyze this technical document and provide:
       1. Technical complexity assessment (scale 1-10)
@@ -40,7 +40,7 @@ agents:
   
   - name: "Legal Compliance Reviewer"
     api: "OpenAI"
-    model: "gpt-4o"
+    model: "gpt-4o-mini"
     prompt: |
       Review this document for legal and compliance considerations:
       - Identify potential legal issues or concerns
@@ -57,7 +57,7 @@ agents:
   
   - name: "Key Entity Extractor"
     api: "Gemini"
-    model: "gemini-1.5-flash"
+    model: "gemini-2.5-flash"
     prompt: |
       Extract and categorize all important entities from this document:
       
@@ -100,7 +100,7 @@ agents:
   
   - name: "Question Generator"
     api: "Gemini"
-    model: "gemini-1.5-flash"
+    model: "gemini-2.5-flash"
     prompt: |
       Based on this document, generate 15-20 insightful questions that:
       - Test comprehension of key concepts
@@ -119,7 +119,7 @@ agents:
   
   - name: "Document Quality Assessor"
     api: "OpenAI"
-    model: "gpt-4o"
+    model: "gpt-4o-mini"
     prompt: |
       Assess the quality of this document across multiple dimensions:
       
@@ -142,7 +142,7 @@ agents:
   
   - name: "Multi-Language Translator"
     api: "Gemini"
-    model: "gemini-1.5-pro"
+    model: "gemini-2.5-flash"
     prompt: |
       Translate this document to Spanish, French, German, and Mandarin Chinese.
       
@@ -160,7 +160,7 @@ agents:
   
   - name: "Citation and Reference Checker"
     api: "OpenAI"
-    model: "gpt-4o"
+    model: "gpt-4o-mini"
     prompt: |
       Analyze citations and references in this document:
       
@@ -179,7 +179,7 @@ agents:
   
   - name: "Content Categorizer"
     api: "Gemini"
-    model: "gemini-1.5-flash"
+    model: "gemini-2.5-flash"
     prompt: |
       Categorize and classify this document content:
       
@@ -199,7 +199,7 @@ agents:
   
   - name: "Readability Optimizer"
     api: "OpenAI"
-    model: "gpt-4o"
+    model: "gpt-4o-mini"
     prompt: |
       Analyze and improve the readability of this document:
       
@@ -218,7 +218,7 @@ agents:
   
   - name: "Comparative Analyzer"
     api: "OpenAI"
-    model: "gpt-4o"
+    model: "gpt-4o-mini"
     prompt: |
       Perform a comparative analysis of this document:
       
@@ -239,7 +239,7 @@ agents:
   
   - name: "Data Pattern Identifier"
     api: "Gemini"
-    model: "gemini-1.5-pro"
+    model: "gemini-2.5-flash"
     prompt: |
       Analyze this document for data, statistics, and quantitative information:
       
@@ -258,7 +258,7 @@ agents:
   
   - name: "Chart Recommendation Engine"
     api: "OpenAI"
-    model: "gpt-4o"
+    model: "gpt-4o-mini"
     prompt: |
       Based on the data in this document, recommend optimal visualizations:
       
@@ -278,7 +278,7 @@ agents:
   
   - name: "Statistical Summary Generator"
     api: "Gemini"
-    model: "gemini-1.5-flash"
+    model: "gemini-2.5-flash"
     prompt: |
       Generate comprehensive statistical summaries for data in this document:
       
@@ -297,7 +297,7 @@ agents:
   
   - name: "Infographic Content Creator"
     api: "OpenAI"
-    model: "gpt-4o"
+    model: "gpt-4o-mini"
     prompt: |
       Transform key information from this document into infographic-ready content:
       
@@ -316,7 +316,7 @@ agents:
   
   - name: "Time Series Analyzer"
     api: "Gemini"
-    model: "gemini-1.5-pro"
+    model: "gemini-2.5-flash"
     prompt: |
       Analyze temporal data and time-based patterns in this document:
       
@@ -335,7 +335,7 @@ agents:
   
   - name: "KPI Dashboard Designer"
     api: "OpenAI"
-    model: "gpt-4o"
+    model: "gpt-4o-mini"
     prompt: |
       Design a KPI dashboard based on metrics in this document:
       
@@ -355,7 +355,7 @@ agents:
   
   - name: "Geospatial Data Mapper"
     api: "Gemini"
-    model: "gemini-1.5-flash"
+    model: "gemini-2.5-flash"
     prompt: |
       Identify and analyze geographic/location data in this document:
       
@@ -395,7 +395,7 @@ agents:
   
   - name: "Overall Sentiment Analyzer"
     api: "OpenAI"
-    model: "gpt-4o"
+    model: "gpt-4o-mini"
     prompt: |
       Perform comprehensive sentiment analysis on this document:
       
@@ -414,7 +414,7 @@ agents:
   
   - name: "Emotional Intelligence Analyzer"
     api: "Gemini"
-    model: "gemini-1.5-pro"
+    model: "gemini-2.5-flash"
     prompt: |
       Analyze emotional intelligence and emotional content in this document:
       
@@ -433,7 +433,7 @@ agents:
   
   - name: "Stakeholder Sentiment Profiler"
     api: "OpenAI"
-    model: "gpt-4o"
+    model: "gpt-4o-mini"
     prompt: |
       Analyze sentiment from different stakeholder perspectives:
       
@@ -453,7 +453,7 @@ agents:
   
   - name: "Brand Sentiment Evaluator"
     api: "Gemini"
-    model: "gemini-1.5-flash"
+    model: "gemini-2.5-flash"
     prompt: |
       Evaluate brand and reputation sentiment in this document:
       
